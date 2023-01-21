@@ -80,6 +80,7 @@ func checkWeather(w http.ResponseWriter, r *http.Request) {
 		city := TempData.City
 
 		// city := strings.SplitN(r.URL.Path, "/", 3)[2]
+		
 		data, err := query(city)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
